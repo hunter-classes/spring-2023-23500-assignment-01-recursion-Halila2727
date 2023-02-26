@@ -75,11 +75,17 @@ bool validness(std::vector<std::string> board, int row, int col)
 int main()
 {
     int size = 9;
+    if(size==0 || size==2 || size==3)
+    {
+        std::cout << "There is no legal configuration of queens with a " << size << "*" << size << " board!\n";
+        return 0;
+    }
     nqueensSolve(size);
-
+    std::cout << "\nSize of board: " << size << "*" << size << "\n";
     for (auto it = solutions[0].begin(); it != solutions[0].end(); it++)
     {
         std::cout << *it << "\n";
     }
+    std::cout << "\n";
     return 0;
 }
